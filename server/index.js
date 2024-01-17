@@ -29,7 +29,7 @@ app.post('/name', async (req, res) => {
 
 app.get('/cookie', async (req, res) => {
     let id = parseInt(req.query.loc);
-    cookieContent = names[id];
+    let cookieContent = names[id];
     names.splice(id, 1);
     res.cookie('name', cookieContent, { maxAge:60000, secure: true });
     res.json(true);
