@@ -5,7 +5,7 @@ var cors = require('cors')
 var app = express()
 let names = [];
 
-app.use(cookieParser())
+app.use(cookieParser());
 
 app.use(cors(
     {
@@ -20,12 +20,12 @@ app.get('/content', async (req, res) => {
     } else {
         res.json([false, `Hello again ${req.cookies.name}!`]);
     }
-})
+});
 
 app.post('/name', async (req, res) => {
     names.push(req.query.name);
     res.json(names.length - 1);
-})
+});
 
 app.get('/cookie', async (req, res) => {
     let id = parseInt(req.query.loc);
